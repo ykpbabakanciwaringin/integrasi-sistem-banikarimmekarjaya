@@ -1,0 +1,30 @@
+{
+  "server": {
+    "port": "8080",
+    "enable_seb_protection": true 
+  },
+  "database": {
+    "host": "localhost",
+    "user": "postgres",
+    "password": "M0b1le@pp5",
+    "name": "new_ykp_system",
+    "port": "5432",
+    "sslmode": "disable"
+  },
+  "jwt": {
+    "secret_key": "79b5730b40b3a180636311fdf63d169ac2fe9e9e911f217d615270ed8adaa3b9b2c2cb61e576bbdebf5f85d5ecb7c43eebdf544e824ba567abc3917753ee2084",
+    "expiration_hours": 24
+  },
+  "whatsapp": {
+    "api_key": "b4c0c397-e25a-430b-b87c-cc320d037829"
+  },
+  "pesantrenqu": {
+    "api_key": "980272db-76b3-11f0-97a9-42010a50401c"
+  },
+  "smtp": {
+    "host": "smtp.gmail.com",
+    "port": 587,
+    "email": "ykpbabakanciwaringin@gmail.com",
+    "password": "udendwshbpnobbmp"
+  }
+}

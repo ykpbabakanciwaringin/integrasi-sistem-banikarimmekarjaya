@@ -1,0 +1,17 @@
+basePath: /api/v1
+host: localhost:8080
+info:
+  contact:
+    email: ykpbabakanciwaringin@gmail.com
+    name: Tim IT Yayasan Kebajikan Pesantren
+  description: Dokumentasi API untuk Sistem Ujian Berbasis Komputer.
+  termsOfService: http://swagger.io/terms/
+  title: Integrasi Sistem Backend API
+  version: "1.0"
+paths: {}
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

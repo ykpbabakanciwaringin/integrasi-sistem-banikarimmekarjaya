@@ -1,0 +1,55 @@
+run:
+  tests: true
+issues:
+  exclude-use-default: false
+  exclude:
+    - "Error return value .* is not checked" # allow sometimes
+linters:
+  enable:
+    - govet
+    - errcheck
+    - staticcheck
+    - unused
+    - gosimple
+    - gocritic
+    - gosec
+    - structcheck
+    - varcheck
+    - deadcode
+    - ineffassign
+    - typecheck
+    - bodyclose
+    - unparam
+    - misspell
+    - gofmt
+    - depguard
+    - exportloopref
+    - goimports
+    - goconst
+    - prealloc
+    - scopelint
+    - nilerr
+    - interfacer
+    - forcetypeassert
+    - errname
+    - unconvert
+    - whitespace
+    - exportloopref
+    - wrapcheck
+    - wsl
+    - lll
+    - gci
+    - gocyclo
+  disable:
+    - maligned
+    - dupl
+    - godot
+    - gomnd
+linters-settings:
+  gofmt:
+    simplify: true
+  goimports:
+    local-prefixes: github.com/yourorg/yourrepo
+  gocyclo:
+    min-complexity: 20
+

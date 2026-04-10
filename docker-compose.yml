@@ -1,0 +1,103 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: bani-karim-postgres # Diubah
+    command: postgres -c max_connections=150 -c shared_buffers=128MB
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-bani_system} # Diubah defaultnya
+    volumes:
+      - bani_karim_postgres_data:/var/lib/postgresql/data # Diubah
+    ports:
+      # BEST PRACTICE: Gunakan port host 5433 agar tidak bentrok dengan YKP (5432)
+      - "127.0.0.1:5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-bani_system}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: bani-karim-backend # Diubah
+    environment:
+      DATABASE_HOST: postgres
+      DATABASE_PORT: "5432" # Tetap 5432 karena ini komunikasi antar container
+      DATABASE_USER: ${POSTGRES_USER:-postgres}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      DATABASE_NAME: ${POSTGRES_DB:-bani_system} # Diubah defaultnya
+      DATABASE_SSLMODE: disable
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-change-me-in-production}
+      JWT_EXPIRATION_HOURS: ${JWT_EXPIRATION_HOURS:-24}
+      SERVER_PORT: "8080"
+      WHATSAPP_API_KEY: ${WHATSAPP_API_KEY:-}
+      ENABLE_SEB_PROTECTION: "true"
+    volumes:
+      - bani_karim_backend_uploads:/app/static/uploads # Diubah
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      # BEST PRACTICE: Gunakan port host 8081 agar tidak bentrok dengan YKP (8080)
+      - "127.0.0.1:8081:8080" 
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: bani-karim-frontend # Diubah
+    environment:
+      NEXT_PUBLIC_API_URL: /api/v1
+    ports:
+      # BEST PRACTICE: Gunakan port host 3001 agar tidak bentrok dengan YKP (3000)
+      - "127.0.0.1:3001:3000" 
+    depends_on:
+      - backend
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: bani-karim-pgadmin # Diubah
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin@banikarimmekarjaya.id} # Diubah defaultnya
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-rahasia123}
+    ports:
+      # BEST PRACTICE: Gunakan port host 5051 agar tidak bentrok dengan YKP (5050)
+      - "127.0.0.1:5051:80"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+
+volumes:
+  bani_karim_postgres_data: # Diubah
+  bani_karim_backend_uploads: # Diubah
