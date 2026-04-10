@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ==============================================================================
-# SKRIP SAKTI SMART DEPLOY & SECURITY AUDIT (VERSION 2.2 PRO - ENHANCED SYNC)
+# SKRIP SAKTI SMART DEPLOY & SECURITY AUDIT (BANI KARIM EDITION)
 # ==============================================================================
 
 GREEN='\033[0;32m'
@@ -16,7 +16,7 @@ log_message() { echo -e "$(date '+%Y-%m-%d %H:%M:%S') - $1" | tee -a "$LOG_FILE"
 
 clear
 echo -e "${BLUE}====================================================${NC}"
-echo -e "${BLUE}    MEMULAI PROSES SMART DEPLOY PRO & AUDIT        ${NC}"
+echo -e "${BLUE}    MEMULAI PROSES SMART DEPLOY PRO (BANI KARIM)    ${NC}"
 echo -e "${BLUE}====================================================${NC}"
 
 echo -e "${YELLOW}[1/7] Melakukan Audit Kesehatan Server...${NC}"
@@ -28,45 +28,49 @@ FREE_RAM=$(free -m | awk '/Mem/ {print $4}')
 if [ "$FREE_RAM" -lt 200 ]; then echo -e "${YELLOW}⚠ PERINGATAN: RAM sisa sedikit ($FREE_RAM MB).${NC}"; else echo -e "${GREEN}✔ RAM Mencukupi ($FREE_RAM MB bebas).${NC}"; fi
 if systemctl is-active --quiet fail2ban; then echo -e "${GREEN}✔ Fail2Ban Aktif.${NC}"; else echo -e "${RED}⚠ Fail2Ban MATI!${NC}"; fi
 
-echo -e "\n${YELLOW}[2/7] Mengamankan Izin File...${NC}"
-cd /var/www/ykpbabakanciwaringin || exit
-if [ -f ".env" ]; then 
-    chmod 600 .env
-    echo -e "${GREEN}✔ File .env telah dikunci (chmod 600).${NC}"
+echo -e "\n${YELLOW}[2/7] Mengamankan Izin File & Masuk Direktori...${NC}"
+# Masuk ke folder Bani Karim
+cd /var/www/banikarimmekarjaya || exit
+if [ -f "backend/.env" ]; then 
+    chmod 600 backend/.env
+    echo -e "${GREEN}✔ File .env Backend telah dikunci (chmod 600).${NC}"
 fi
-# Mengamankan skrip deploy itu sendiri dari eksekusi pihak luar
+if [ -f "frontend/.env" ]; then 
+    chmod 600 frontend/.env
+    echo -e "${GREEN}✔ File .env Frontend telah dikunci (chmod 600).${NC}"
+fi
 chmod 700 deploy.sh
 
 echo -e "\n${YELLOW}[3/7] Sinkronisasi Kode dari GitHub...${NC}"
 log_message "${BLUE}Menarik pembaruan terbaru...${NC}"
-# PERBAIKAN: Menggabungkan perintah dengan && agar jika fetch gagal, reset tidak dijalankan
 if git fetch origin main && git reset --hard origin/main; then 
     echo -e "${GREEN}✔ Kode berhasil disinkronkan tanpa konflik.${NC}"
 else 
-    log_message "${RED}✘ Gagal sinkronisasi Git. Periksa koneksi ke GitHub atau hak akses repository.${NC}"
+    log_message "${RED}✘ Gagal sinkronisasi Git. Periksa koneksi ke GitHub.${NC}"
     exit 1
 fi
 
 echo -e "\n${YELLOW}[4/7] Membangun Container (Docker Compose)...${NC}"
-# PERBAIKAN: Menambahkan --remove-orphans untuk membersihkan sisa container yang tidak terpakai
-if sudo docker-compose build --pull && sudo docker-compose up -d --remove-orphans; then 
-    log_message "${GREEN}✔ Container berhasil diperbarui tanpa downtime yang signifikan.${NC}"
+if sudo docker-compose up -d --build --remove-orphans; then 
+    log_message "${GREEN}✔ Container Bani Karim berhasil diperbarui.${NC}"
 else 
     log_message "${RED}✘ Gagal saat proses Docker Compose.${NC}"
     exit 1
 fi
 
-echo -e "\n${YELLOW}[5/7] Memuat ulang Nginx...${NC}"
-sudo docker exec ykp-nginx nginx -s reload > /dev/null 2>&1 || true
+echo -e "\n${YELLOW}[5/7] Memuat ulang Nginx Utama...${NC}"
+# Karena Nginx Anda berjalan di OS Ubuntu langsung (Bare Metal)
+sudo systemctl reload nginx > /dev/null 2>&1 || true
 echo -e "${GREEN}✔ Nginx dikonfigurasi ulang.${NC}"
 
-echo -e "\n${YELLOW}[6/7] Memverifikasi Status Layanan...${NC}"
-sleep 5
-CHECK_FRONTEND=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000 || echo "FAIL")
-if [[ "$CHECK_FRONTEND" == "200" ]]; then 
-    echo -e "${GREEN}✔ Frontend: ONLINE (Status: $CHECK_FRONTEND)${NC}"
+echo -e "\n${YELLOW}[6/7] Memverifikasi Status Layanan Bani Karim...${NC}"
+sleep 10 # Memberi waktu agak lama untuk Next.js dan Golang booting
+# Mengecek Port 3001 (Port Frontend Bani Karim)
+CHECK_FRONTEND=$(curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:3001 || echo "FAIL")
+if [[ "$CHECK_FRONTEND" == "200" || "$CHECK_FRONTEND" == "308" ]]; then 
+    echo -e "${GREEN}✔ Frontend Bani Karim: ONLINE (Status: $CHECK_FRONTEND)${NC}"
 else 
-    echo -e "${YELLOW}⚠ Frontend Status: $CHECK_FRONTEND (Bisa jadi masih proses booting, cek logs jika berlanjut)${NC}"
+    echo -e "${YELLOW}⚠ Frontend Status: $CHECK_FRONTEND (Bisa jadi masih proses booting, cek 'sudo docker ps')${NC}"
 fi
 
 echo -e "\n${YELLOW}[7/7] Membersihkan Image Usang...${NC}"
