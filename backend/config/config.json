@@ -4,10 +4,10 @@
     "enable_seb_protection": true 
   },
   "database": {
-    "host": "localhost",
+    "host": "bani-karim-postgres",
     "user": "postgres",
     "password": "M0b1le@pp5",
-    "name": "new_ykp_system",
+    "name": "bani_karim_system",
     "port": "5432",
     "sslmode": "disable"
   },
@@ -24,7 +24,7 @@
   "smtp": {
     "host": "smtp.gmail.com",
     "port": 587,
-    "email": "banikarimmekarjaya@gmail.com",
+    "email": "ykpbabakanciwaringin@gmail.com",
     "password": "udendwshbpnobbmp"
   }
 }

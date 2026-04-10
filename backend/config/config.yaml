@@ -3,11 +3,11 @@ server:
   enable_seb_protection: true 
 
 database:
-  host: "localhost"
+  host: "bani-karim-postgres"
   port: "5432"
   user: "postgres"      
   password: "M0b1le@pp5"  
-  name: "new_ykp_system"       
+  name: "bani_karim_system"       
   sslmode: "disable"
 
 jwt:
@@ -20,7 +20,7 @@ whatsapp:
 smtp:
   host: "smtp.gmail.com"
   port: 587
-  email: "banikarimmekarjaya@gmail.com"
+  email: "ykpbabakanciwaringin@gmail.com"
   password: "udendwshbpnobbmp"
 
 pesantrenqu:
