@@ -3,8 +3,8 @@ package http
 
 import (
 	"github.com/gin-gonic/gin"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/delivery/http/middleware"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/internal/delivery/http/middleware"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
 )
 
 type AppHandlers struct {

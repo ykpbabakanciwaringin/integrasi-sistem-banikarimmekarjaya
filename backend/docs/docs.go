@@ -12,7 +12,7 @@ const docTemplate = `{
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
             "name": "Tim IT Yayasan Kebajikan Pesantren",
-            "email": "ykpbabakanciwaringin@gmail.com"
+            "email": "banikarimmekarjaya@gmail.com"
         },
         "version": "{{.Version}}"
     },

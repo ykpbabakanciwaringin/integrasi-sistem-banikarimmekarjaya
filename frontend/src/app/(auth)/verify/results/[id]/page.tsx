@@ -237,7 +237,7 @@ function VerificationResultContent() {
                   <br />
                   Jawa Barat Kode Pos 45167 Telp. / WA : 082 260 246 434
                   <br />
-                  Email : ykpbabakanciwaringin@gmail.com
+                  Email : banikarimmekarjaya@gmail.com
                 </p>
               </div>
 

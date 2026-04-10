@@ -4,7 +4,7 @@ package usecase
 import (
 	"context"
 
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
 )
 
 type pesantrenQuUsecase struct {

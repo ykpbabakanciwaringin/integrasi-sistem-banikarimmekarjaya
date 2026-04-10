@@ -8,7 +8,7 @@ import (
 
 	"github.com/google/uuid"
 	"gorm.io/gorm"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
 )
 
 type assignmentRepo struct {

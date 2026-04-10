@@ -61,7 +61,7 @@ export const TeacherIdCardPrint = forwardRef<
         <p className="text-[11px] font-medium mt-1.5 text-emerald-50 tracking-wide drop-shadow-sm leading-snug">
           Jl. Gondang Manis No. 52 Babakan Ciwaringin Cirebon<br />
           Jawa Barat 45167 | WA : 082 260 246 434<br />
-          Email : ykpbabakanciwaringin@gmail.com
+          Email : banikarimmekarjaya@gmail.com
         </p>
       </div>
 

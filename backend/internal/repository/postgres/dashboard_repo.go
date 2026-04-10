@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"gorm.io/gorm"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
 )
 
 // DashboardRepository adalah interface untuk manajemen statistik

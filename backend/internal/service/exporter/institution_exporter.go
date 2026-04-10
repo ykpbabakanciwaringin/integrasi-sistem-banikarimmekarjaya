@@ -6,8 +6,8 @@ import (
 	"fmt"
 
 	"github.com/xuri/excelize/v2"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils/excel_helper"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils/excel_helper"
 )
 
 type InstitutionExporter interface {

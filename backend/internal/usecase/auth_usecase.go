@@ -11,9 +11,9 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/whatsapp"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils"
+	"banikarimmekarjaya.id/cbt-backend/pkg/whatsapp"
 )
 
 type AuthUsecase interface {

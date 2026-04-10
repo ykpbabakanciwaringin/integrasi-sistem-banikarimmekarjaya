@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"time"
 
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
 )
 
 type pesantrenQuRepo struct {

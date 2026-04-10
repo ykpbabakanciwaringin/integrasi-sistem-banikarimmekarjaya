@@ -6,9 +6,9 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/usecase"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/internal/usecase"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils"
 )
 
 type TeacherHandler struct {

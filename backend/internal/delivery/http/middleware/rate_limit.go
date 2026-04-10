@@ -7,7 +7,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"golang.org/x/time/rate"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils" // Gunakan Utils
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils" // Gunakan Utils
 )
 
 type client struct {

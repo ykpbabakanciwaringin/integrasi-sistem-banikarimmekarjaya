@@ -5,7 +5,7 @@
 ```bash
 # 1. Clone repository
 git clone <repo-url>
-cd ykpbabakanciwaringin
+cd banikarimmekarjaya
 
 # 2. Setup environment
 cp .env.example .env
@@ -82,7 +82,7 @@ sudo crontab -e
 crontab -e
 
 # Tambahkan (backup setiap hari jam 2 pagi)
-0 2 * * * cd /var/www/ykpbabakanciwaringin && ./scripts/backup-db.sh
+0 2 * * * cd /var/www/banikarimmekarjaya && ./scripts/backup-db.sh
 ```
 
 ### Restore Database
@@ -114,7 +114,7 @@ docker system df
 
 # Volume usage
 docker volume ls
-docker volume inspect ykpbabakanciwaringin_postgres_data
+docker volume inspect banikarimmekarjaya_postgres_data
 ```
 
 ### Health Checks

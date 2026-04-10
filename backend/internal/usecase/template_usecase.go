@@ -6,8 +6,8 @@ import (
 	"context"
 	"errors"
 
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/service/exporter"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/internal/service/exporter"
 )
 
 type TemplateUsecase interface {

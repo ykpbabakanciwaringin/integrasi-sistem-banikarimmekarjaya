@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/jung-kurt/gofpdf"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils/pdf_helper"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils/pdf_helper"
 )
 
 type ExamResultPdfExporter interface {
@@ -63,7 +63,7 @@ func (e *examResultPdfExporter) GenerateBeritaAcaraPDF(session domain.ExamSessio
 	}
 
 	pdf := pdf_helper.SetupPDF("P")
-	qrPayload := fmt.Sprintf("https://ykpbabakanciwaringin.id/verify?type=BA&id=%s", session.ID.String())
+	qrPayload := fmt.Sprintf("https://banikarimmekarjaya.id/verify?type=BA&id=%s", session.ID.String())
 
 	// --- HALAMAN 1: BERITA ACARA ---
 	pdf.AddPage()

@@ -8,9 +8,9 @@ import (
 	"time"
 
 	"github.com/xuri/excelize/v2"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils/excel_helper"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils/pdf_helper"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils/excel_helper"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils/pdf_helper"
 )
 
 type ExamResultExporter interface {
@@ -133,7 +133,7 @@ func (e *examResultExporter) GenerateCBTResultPDF(session domain.ExamSession, re
 	pdf.SetMargins(10, 15, 10)
 	pdf.AddPage()
 
-	qrPayload := fmt.Sprintf("https://ykpbabakanciwaringin.id/verify?session_id=%s", session.ID.String())
+	qrPayload := fmt.Sprintf("https://banikarimmekarjaya.id/verify?session_id=%s", session.ID.String())
 	pdf_helper.RenderKopSurat(pdf, kopData, qrPayload, true)
 
 	// Judul Laporan & Nama Kegiatan

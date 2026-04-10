@@ -7,9 +7,9 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/usecase"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils/pdf_helper"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/internal/usecase"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils/pdf_helper"
 )
 
 type InstitutionHandler struct {
@@ -186,7 +186,7 @@ func (h *InstitutionHandler) ExportPDF(c *gin.Context) {
 		AddressDetail:  "Jl. Gondang Manis No.52 RT 002 RW 002 Ds. Babakan Kec. Ciwaringin",
 		AddressCity:    "Kab. Cirebon Jawa Barat 45167",
 		ContactPhone:   "085123456789",
-		Website:        "www.ykpbabakanciwaringin.id",
+		Website:        "www.banikarimmekarjaya.id",
 	}
 
 	buf, err := h.InstUsecase.ExportPDF(c.Request.Context(), filter, kopData)

@@ -9,9 +9,9 @@ import (
 	"time"
 
 	"github.com/xuri/excelize/v2"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils/excel_helper"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils/pdf_helper"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils/excel_helper"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils/pdf_helper"
 )
 
 type JournalExporter interface {
@@ -199,7 +199,7 @@ func (e *journalExporter) GenerateJournalRecapPDF(monthStr string, journals []do
 	pdf := pdf_helper.SetupPDF("L") // Landscape sangat penting untuk 31 kolom
 	pdf.AddPage()
 
-	qrPayload := fmt.Sprintf("https://ykpbabakanciwaringin.id/verify-document?type=JOURNAL&month=%s", monthStr)
+	qrPayload := fmt.Sprintf("https://banikarimmekarjaya.id/verify-document?type=JOURNAL&month=%s", monthStr)
 	pdf_helper.RenderKopSurat(pdf, kopData, qrPayload, true)
 
 	pdf.SetFont("Cambria", "B", 12)

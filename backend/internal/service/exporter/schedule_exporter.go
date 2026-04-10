@@ -8,9 +8,9 @@ import (
 
 	"github.com/jung-kurt/gofpdf"
 	"github.com/xuri/excelize/v2"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils/excel_helper"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils/pdf_helper"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils/excel_helper"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils/pdf_helper"
 )
 
 type ScheduleExporter interface {
@@ -206,7 +206,7 @@ func (e *scheduleExporter) GenerateScheduleMatrixPDF(classes []*domain.Class, se
 		daySessionCount[s.DayOfWeek]++
 	}
 
-	qrPayload := "https://ykpbabakanciwaringin.id/verify/schedule"
+	qrPayload := "https://banikarimmekarjaya.id/verify/schedule"
 	pdf_helper.RenderKopSurat(pdf, kopData, qrPayload, true)
 
 	pdf.SetFont("Cambria", "B", 12)

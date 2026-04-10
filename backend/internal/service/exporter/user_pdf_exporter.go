@@ -7,9 +7,9 @@ import (
 	"net/url"
 	"time"
 
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils/pdf_helper"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils/pdf_helper"
 )
 
 type UserExporter interface {
@@ -32,7 +32,7 @@ func (e *userExporter) GenerateStudentListPDF(students []domain.User, kopData pd
 	pdf.SetAutoPageBreak(true, 10)
 	pdf.AddPage()
 
-	frontendHost := "https://ykpbabakanciwaringin.id"
+	frontendHost := "https://banikarimmekarjaya.id"
 	dateStr := time.Now().Format("02-01-2006")
 	safeInstName := url.QueryEscape(kopData.Name)
 	qrPayload := fmt.Sprintf("%s/verify-document?type=DATA_SISWA&inst_id=%s&date=%s", frontendHost, safeInstName, dateStr)
@@ -137,7 +137,7 @@ func (e *userExporter) GenerateTeacherListPDF(teachers []domain.User, kopData pd
 	pdf.SetAutoPageBreak(true, 10)
 	pdf.AddPage()
 
-	frontendHost := "https://ykpbabakanciwaringin.id"
+	frontendHost := "https://banikarimmekarjaya.id"
 	dateStr := time.Now().Format("02-01-2006")
 	safeInstName := url.QueryEscape(kopData.Name)
 	qrPayload := fmt.Sprintf("%s/verify-document?type=DATA_GURU&inst_id=%s&date=%s", frontendHost, safeInstName, dateStr)

@@ -7,8 +7,8 @@ import (
 	"net/url"
 	"time"
 
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils/pdf_helper"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils/pdf_helper"
 )
 
 type InstitutionPdfExporter interface {
@@ -29,7 +29,7 @@ func (e *institutionPdfExporter) GenerateInstitutionListPDF(institutions []domai
 	pdf.AddPage()
 
 	// Pembuatan QR Code untuk validasi dokumen
-	frontendHost := "https://ykpbabakanciwaringin.id"
+	frontendHost := "https://banikarimmekarjaya.id"
 	dateStr := time.Now().Format("02-01-2006")
 	qrPayload := fmt.Sprintf("%s/verify-document?type=INSTITUTION_LIST&date=%s", frontendHost, url.QueryEscape(dateStr))
 

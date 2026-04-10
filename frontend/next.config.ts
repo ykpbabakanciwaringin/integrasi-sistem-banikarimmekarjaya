@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
   // Menggunakan 'as any' untuk menghindari error tipe data TypeScript yang Anda temukan sebelumnya
   experimental: {
     serverActions: {
-      allowedOrigins: ["ykpbabakanciwaringin.id", "www.ykpbabakanciwaringin.id", "localhost:3000"],
+      allowedOrigins: ["banikarimmekarjaya.id", "www.banikarimmekarjaya.id", "localhost:3000"],
     },
   } as any,
 
@@ -35,7 +35,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "ykpbabakanciwaringin.id",
+        hostname: "banikarimmekarjaya.id",
       },
       {
         protocol: "http",

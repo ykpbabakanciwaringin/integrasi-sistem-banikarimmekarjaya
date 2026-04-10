@@ -20,20 +20,20 @@ import (
 	"gorm.io/gorm"
 	gormlogger "gorm.io/gorm/logger"
 
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/service/exporter"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/service/importer"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/internal/service/exporter"
+	"banikarimmekarjaya.id/cbt-backend/internal/service/importer"
 
-	_ "ykpbabakanciwaringin.id/cbt-backend/docs"
-	handler "ykpbabakanciwaringin.id/cbt-backend/internal/delivery/http"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/delivery/http/middleware"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/repository/postgres"
-	repo "ykpbabakanciwaringin.id/cbt-backend/internal/repository/postgres"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/repository/thirdparty"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/usecase"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/logger"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/whatsapp"
+	_ "banikarimmekarjaya.id/cbt-backend/docs"
+	handler "banikarimmekarjaya.id/cbt-backend/internal/delivery/http"
+	"banikarimmekarjaya.id/cbt-backend/internal/delivery/http/middleware"
+	"banikarimmekarjaya.id/cbt-backend/internal/repository/postgres"
+	repo "banikarimmekarjaya.id/cbt-backend/internal/repository/postgres"
+	"banikarimmekarjaya.id/cbt-backend/internal/repository/thirdparty"
+	"banikarimmekarjaya.id/cbt-backend/internal/usecase"
+	"banikarimmekarjaya.id/cbt-backend/pkg/logger"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils"
+	"banikarimmekarjaya.id/cbt-backend/pkg/whatsapp"
 )
 
 func main() {
@@ -220,7 +220,7 @@ func main() {
 	r.Use(cors.New(cors.Config{
 		AllowOrigins: []string{
 			"http://localhost:3000", "http://127.0.0.1:3000",
-			"https://ykpbabakanciwaringin.id", "https://www.ykpbabakanciwaringin.id",
+			"https://banikarimmekarjaya.id", "https://www.banikarimmekarjaya.id",
 		},
 		AllowOriginFunc: func(origin string) bool {
 			return strings.HasPrefix(origin, "http://192.168.") || strings.HasPrefix(origin, "http://10.") || strings.HasPrefix(origin, "http://172.")

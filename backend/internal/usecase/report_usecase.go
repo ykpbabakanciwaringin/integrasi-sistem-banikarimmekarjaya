@@ -6,7 +6,7 @@ import (
 	"errors"
 	"sort"
 
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
 )
 
 type ReportUsecase interface {

@@ -2,7 +2,7 @@ basePath: /api/v1
 host: localhost:8080
 info:
   contact:
-    email: ykpbabakanciwaringin@gmail.com
+    email: banikarimmekarjaya@gmail.com
     name: Tim IT Yayasan Kebajikan Pesantren
   description: Dokumentasi API untuk Sistem Ujian Berbasis Komputer.
   termsOfService: http://swagger.io/terms/

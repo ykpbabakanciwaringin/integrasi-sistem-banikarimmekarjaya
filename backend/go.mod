@@ -1,4 +1,4 @@
-module ykpbabakanciwaringin.id/cbt-backend
+module banikarimmekarjaya.id/cbt-backend
 
 go 1.25.6
 

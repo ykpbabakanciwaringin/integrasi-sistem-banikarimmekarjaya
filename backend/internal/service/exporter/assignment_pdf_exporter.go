@@ -7,8 +7,8 @@ import (
 	"net/url"
 	"time"
 
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils/pdf_helper"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils/pdf_helper"
 )
 
 type AssignmentPdfExporter interface {
@@ -28,7 +28,7 @@ func (e *assignmentPdfExporter) GenerateRekapPDF(detail *domain.AssignmentDetail
 	pdf.SetAutoPageBreak(true, 10)
 	pdf.AddPage()
 
-	frontendHost := "https://ykpbabakanciwaringin.id"
+	frontendHost := "https://banikarimmekarjaya.id"
 	dateStr := time.Now().Format("02-01-2006")
 	safeInstName := url.QueryEscape(kopData.Name)
 	qrPayload := fmt.Sprintf("%s/verify-document?type=REKAP_NILAI_PENUGASAN&inst_id=%s&date=%s", frontendHost, safeInstName, dateStr)
@@ -115,7 +115,7 @@ func (e *assignmentPdfExporter) GenerateAssignmentListPDF(assignments []domain.A
 	pdf.SetAutoPageBreak(true, 10)
 	pdf.AddPage()
 
-	qrPayload := fmt.Sprintf("https://ykpbabakanciwaringin.id/verify-document?type=ASSIGNMENT_LIST&date=%s", time.Now().Format("20060102"))
+	qrPayload := fmt.Sprintf("https://banikarimmekarjaya.id/verify-document?type=ASSIGNMENT_LIST&date=%s", time.Now().Format("20060102"))
 	pdf_helper.RenderKopSurat(pdf, kopData, qrPayload, true)
 
 	pdf.SetFont("Cambria", "B", 12)

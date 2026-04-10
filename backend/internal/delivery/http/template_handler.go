@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/usecase"
+	"banikarimmekarjaya.id/cbt-backend/internal/usecase"
 )
 
 type TemplateHandler struct {

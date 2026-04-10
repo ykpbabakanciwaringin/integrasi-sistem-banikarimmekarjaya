@@ -13,8 +13,8 @@ import (
 	"strings"
 	"time"
 
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils"
 )
 
 type examEventUsecase struct {
@@ -137,7 +137,7 @@ func (uc *examEventUsecase) GenerateSEBConfig(ctx context.Context, id string) (*
 	if appURL == "" {
 		appURL = os.Getenv("FRONTEND_APP_URL")
 		if appURL == "" {
-			appURL = "https://ykpbabakanciwaringin.id"
+			appURL = "https://banikarimmekarjaya.id"
 		}
 	}
 

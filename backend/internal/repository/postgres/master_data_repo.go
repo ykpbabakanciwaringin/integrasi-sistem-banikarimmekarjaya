@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"gorm.io/gorm"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
 )
 
 type masterDataRepo struct {

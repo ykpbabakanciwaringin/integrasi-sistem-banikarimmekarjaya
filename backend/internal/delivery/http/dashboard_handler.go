@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/usecase"
+	"banikarimmekarjaya.id/cbt-backend/internal/usecase"
 )
 
 type DashboardHandler struct {

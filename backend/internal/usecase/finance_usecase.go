@@ -14,7 +14,7 @@ import (
 	"time"
 
 	"github.com/xuri/excelize/v2"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
 )
 
 type financeUsecase struct {

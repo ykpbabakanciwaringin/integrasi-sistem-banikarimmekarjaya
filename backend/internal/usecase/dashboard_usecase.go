@@ -4,8 +4,8 @@ package usecase
 import (
 	"context"
 
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	repo "ykpbabakanciwaringin.id/cbt-backend/internal/repository/postgres"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	repo "banikarimmekarjaya.id/cbt-backend/internal/repository/postgres"
 )
 
 type DashboardUsecase interface {

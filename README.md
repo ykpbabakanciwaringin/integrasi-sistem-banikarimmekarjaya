@@ -1,4 +1,4 @@
-# Integrasi Sistem - YKP Babakan Ciwaringin
+# Integrasi Sistem - Bani Karim Mekarjaya
 
 Sistem Ujian Berbasis Komputer (CBT) untuk YKP Babakan Ciwaringin.
 
@@ -7,7 +7,7 @@ Sistem Ujian Berbasis Komputer (CBT) untuk YKP Babakan Ciwaringin.
 ```bash
 # 1. Clone repository
 git clone <repo-url>
-cd ykpbabakanciwaringin
+cd banikarimmekarjaya
 
 # 2. Setup environment
 cp .env.example .env
@@ -25,7 +25,7 @@ docker-compose up -d
 ## 📁 Struktur Project
 
 ```
-ykpbabakanciwaringin/
+banikarimmekarjaya/
 ├── backend/              # Go backend API
 │   ├── cmd/api/         # Main application
 │   ├── internal/        # Internal packages

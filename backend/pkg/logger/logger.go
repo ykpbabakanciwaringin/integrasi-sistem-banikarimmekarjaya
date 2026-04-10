@@ -7,7 +7,7 @@ import (
 
 	"github.com/natefinch/lumberjack"
 	"github.com/sirupsen/logrus"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils" // Import Utils Waktu
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils" // Import Utils Waktu
 )
 
 var Log *logrus.Logger

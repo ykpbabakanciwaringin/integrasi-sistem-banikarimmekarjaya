@@ -11,9 +11,9 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/service/importer"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/internal/service/importer"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils"
 )
 
 type TeacherUsecase interface {

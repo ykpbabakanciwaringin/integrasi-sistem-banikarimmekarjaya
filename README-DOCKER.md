@@ -35,7 +35,7 @@ nano .env  # Edit dengan nilai yang sesuai
 ### 3. Build dan Jalankan dengan Docker Compose
 
 ```bash
-cd /var/www/ykpbabakanciwaringin
+cd /var/www/banikarimmekarjaya
 
 # Build semua images
 docker compose build
@@ -158,7 +158,7 @@ Untuk production:
 ### Struktur File Penting
 
 ```
-/var/www/ykpbabakanciwaringin/
+/var/www/banikarimmekarjaya/
 ├── docker-compose.yml      # Konfigurasi Docker Compose
 ├── .env.example           # Template environment variables
 ├── .env                   # Environment variables (buat sendiri, jangan commit)

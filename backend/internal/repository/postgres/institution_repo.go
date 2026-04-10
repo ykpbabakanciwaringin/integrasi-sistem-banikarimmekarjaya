@@ -6,7 +6,7 @@ import (
 	"errors"
 
 	"gorm.io/gorm"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
 )
 
 type institutionRepo struct {

@@ -112,7 +112,7 @@ POSTGRES_PASSWORD=<generated-password>
    
    # Clone repository
    git clone <repo-url>
-   cd ykpbabakanciwaringin
+   cd banikarimmekarjaya
    ```
 
 2. **Setup Environment**

@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"strings"
 
-	"ykpbabakanciwaringin.id/cbt-backend/internal/domain"
-	"ykpbabakanciwaringin.id/cbt-backend/internal/service/exporter"
-	"ykpbabakanciwaringin.id/cbt-backend/pkg/utils/pdf_helper"
+	"banikarimmekarjaya.id/cbt-backend/internal/domain"
+	"banikarimmekarjaya.id/cbt-backend/internal/service/exporter"
+	"banikarimmekarjaya.id/cbt-backend/pkg/utils/pdf_helper"
 )
 
 type PdfUsecase interface {
@@ -44,7 +44,7 @@ func (u *pdfUsecase) buildKopSuratData(ctx context.Context, instID string) pdf_h
 		Name:          "YAYASAN KEBAJIKAN PESANTREN",
 		Header1:       "SK KEMENKUMHAM : AHU-0000028.AH.01.05.TAHUN 2023",
 		AddressDetail: "Jl. Gondang Manis No. 52 Desa Babakan Kecamatan Ciwaringin Kabupaten Cirebon",
-		AddressCity:   "Jawa Barat Kode Pos 45167 Telp/WA 082 260 246 434 Email: ykpbabakanciwaringin@gmail.com",
+		AddressCity:   "Jawa Barat Kode Pos 45167 Telp/WA 082 260 246 434 Email: banikarimmekarjaya@gmail.com",
 	}
 
 	// 2. Tarik Data Nyata dari Database jika instID spesifik diberikan
